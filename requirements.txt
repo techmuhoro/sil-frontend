@@ -1,0 +1,37 @@
+- Landing page
+- Authentication page (Google/Facebook/Github)
+- Pages That require Authentication
+
+    Home:
+        - A table with a list of all the user. Should contain the number of albums that a user has
+        - Get request for the users
+        - Get request for the albums
+
+    User:
+        - Show a selected user and lists his / her albums 
+        - Get request for the selected user
+        - Get request for the user albums
+    
+    Album:
+        - Lists an album photos
+        - Get request for the album
+        - Get request for the album phtots
+
+    Photo:
+        - Allow the user to edit the title of the photo: A PUT/PATCH request
+        - The page must run a get request for the photo
+
+- Must have
+    - Development and Production programming branches
+    - Screens built should retain the pages after reloading
+    - Informative commit messages
+    - Proper documentation of the code
+    - Software unit test
+    - A pipeline job to run linting and unit tests automatically
+    - A pipeline job to automatically deploy the software project once certain checks have been met
+    - Having the application deployed. Use any deployment services with free tiers e.g. heroku, vercel
+
+- Good to have
+    - Linters
+    - Loaders to show that data is being fetched
+    - Logging service for application errors
