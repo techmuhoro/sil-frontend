@@ -20,7 +20,7 @@ export default function UsersToolbar() {
                 <Box sx={{ display: 'flex' }}>
                     <>
                         <TextField
-                            placeholder="Search Channels"
+                            placeholder="Search users"
                             id="search-agents"
                             variant="outlined"
                             size="small"
