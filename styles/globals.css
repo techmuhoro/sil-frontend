@@ -101,3 +101,25 @@ a {
         color-scheme: dark;
     }
 } */
+
+/*===============================Login Button styles==================================*/
+.google-img {
+    width: 40px;
+    height: 40px;
+}
+.google-login {
+    border: 0.15rem solid #4285f4;
+    padding: 10px 50px;
+    /* border: none; */
+    background-color: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    column-gap: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.google-login span {
+    font-size: 1.05rem;
+}
+/*===============================Login Button styles==================================*/

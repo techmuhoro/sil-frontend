@@ -1,24 +1,5 @@
 import React from 'react';
-import {
-    Box,
-    Typography,
-    Table,
-    TableBody,
-    TableHead,
-    TableContainer,
-    TableCell,
-    TableRow,
-    IconButton,
-    Icon,
-    Tooltip,
-    CircularProgress,
-    Grid,
-} from '@mui/material';
-import Paper from '@mui/material/Paper';
-import DeleteIcon from '@mui/icons-material/Delete';
-import EditIcon from '@mui/icons-material/Edit';
-import RemoveRedEyeIcon from '@mui/icons-material/RemoveRedEye';
-import { useRouter } from 'next/router';
+import { Box, Grid } from '@mui/material';
 import AlbumCard from './AlbumCard';
 
 const overlays = [
@@ -29,7 +10,6 @@ const overlays = [
     // 'rgba(16, 238, 146, 0.5)',
 ];
 export default function AlbumsTable({ user }) {
-    console.log('User--->', user.albums);
 
     return (
         <Box
@@ -40,11 +20,19 @@ export default function AlbumsTable({ user }) {
             }}
         >
             <Grid spacing={3} container>
-                {user.albums.map((album, index) => (
-                    <Grid item>
-                        <AlbumCard title={album.title} overlay={index % 2 == 0 ? overlays[0] : overlays[1]} />
-                    </Grid>
-                ))}
+                {React.Children.toArray(
+                    user.albums?.map((album, index) => (
+                        <Grid item>
+                            <AlbumCard
+                                title={album.title}
+                                overlay={
+                                    index % 2 == 0 ? overlays[0] : overlays[1]
+                                }
+                                link={`/users/${user.id}/albums/${album.id}`}
+                            />
+                        </Grid>
+                    ))
+                )}
             </Grid>
         </Box>
     );
