@@ -1,0 +1,12 @@
+2023-02-02 22:08:58 [development] info: Request headers: {"user-agent":"PostmanRuntime/7.29.2","accept":"*/*","cache-control":"no-cache","postman-token":"76ab77fe-78bb-47d7-b397-f0cbeae969b5","host":"localhost:3000","accept-encoding":"gzip, deflate, br","connection":"keep-alive","content-type":"multipart/form-data; boundary=--------------------------745378116473063682044591","content-length":"584980"}
+2023-02-02 22:12:16 [development] error: Oops! there was an error processing your request 
+ Error: Oops! there was an error processing your request
+    at handler (webpack-internal:///(api)/./pages/api/hello.js:11:15)
+    at Object.apiResolver (/home/super/Code/Savannah/sil-frontend/node_modules/next/dist/server/api-utils/node.js:372:15)
+    at processTicksAndRejections (internal/process/task_queues.js:93:5)
+    at async DevServer.runApi (/home/super/Code/Savannah/sil-frontend/node_modules/next/dist/server/next-server.js:488:9)
+    at async Object.fn (/home/super/Code/Savannah/sil-frontend/node_modules/next/dist/server/next-server.js:751:37)
+    at async Router.execute (/home/super/Code/Savannah/sil-frontend/node_modules/next/dist/server/router.js:253:36)
+    at async DevServer.run (/home/super/Code/Savannah/sil-frontend/node_modules/next/dist/server/base-server.js:384:29)
+    at async DevServer.run (/home/super/Code/Savannah/sil-frontend/node_modules/next/dist/server/dev/next-dev-server.js:741:20)
+    at async DevServer.handleRequest (/home/super/Code/Savannah/sil-frontend/node_modules/next/dist/server/base-server.js:322:20)

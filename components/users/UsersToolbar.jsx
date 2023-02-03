@@ -10,7 +10,7 @@ import { Download as DownloadIcon } from '../../icons/download';
 import { Upload as UploadIcon } from '../../icons/upload';
 import AddIcon from '@mui/icons-material/Add';
 
-export default function UsersToolbar() {
+export default function UsersToolbar({ search, handleSearchChange }) {
     return (
         <Box sx={{ mb: 2 }}>
             <Typography variant="h4" sx={{ mb: 1 }}>
@@ -31,6 +31,8 @@ export default function UsersToolbar() {
                                     </InputAdornment>
                                 ),
                             }}
+                            value={search}
+                            onChange={handleSearchChange}
                         />
                     </>
                     <Box sx={{ ml: 'auto' }}>
