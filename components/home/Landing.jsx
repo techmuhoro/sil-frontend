@@ -78,7 +78,7 @@ export default function Landing() {
                     }}
                 >
                     <button className={styles['login-btn']} onClick={() => router.push('/auth/login')}>Sign in</button>
-                    <button className={styles['app-btn']} onClick={() => router.push('/auth/private')}>Go to app</button>
+                    <button className={styles['app-btn']} onClick={() => router.push('/users')}>Go to app</button>
                 </Box>
             </LandingCenter>
         </LandingWrapper>
