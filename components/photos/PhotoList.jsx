@@ -12,17 +12,17 @@ export default function PhotosList({ photos }) {
     return (
         <>
             <Box>
-                <Typography>Images go here</Typography>
+                {/* <Typography>Images go here</Typography> */}
                 <Stack
                     sx={{
                         rowGap: '30px',
                         columnGap: '20px',
-                        alignItems: {
-                            xs: 'center',
-                            sm: 'flex-start',
-                        },
+                        alignItems: 'center',
                         flexDirection: {
                             sm: 'row',
+                        },
+                        justifyContent: {
+                            md: 'space-around'
                         },
                         flexWrap: 'wrap',
                     }}

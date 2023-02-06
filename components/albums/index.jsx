@@ -3,6 +3,7 @@ import { Box, Typography } from '@mui/material';
 import { ContentWrapper } from '@/components/ContentWrapper';
 import AlbumsToolbar from '@/components/albums/AlbumsToolbar';
 import AlbumsTable from '@/components/albums/AlbumsTable';
+import AppNavbar from '@/components/Navbar';
 
 export default function AlbumsView({ user }) {
     const [albumsList, setAlbumsList] = useState(user.albums);
@@ -24,6 +25,7 @@ export default function AlbumsView({ user }) {
 
     return (
         <Box sx={{}}>
+            <AppNavbar />
             <ContentWrapper>
                 <>
                     <AlbumsToolbar

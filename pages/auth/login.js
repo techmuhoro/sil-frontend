@@ -1,6 +1,7 @@
 import { Box, Button } from '@mui/material';
 import { signIn } from 'next-auth/react';
 import Image from 'next/image';
+import { getSession } from 'next-auth/react';
 
 export default function LoginPage() {
     const handleLogin = () => {
@@ -31,4 +32,23 @@ export default function LoginPage() {
             </Box>
         </>
     );
+}
+
+export async function getServerSideProps({ req }) {
+    // check if user is authenticated
+    const session = await getSession({ req });
+
+    // if user is already authenticated, redirect to app
+    if (session) {
+        return {
+            redirect: {
+                destination: '/users',
+                permanent: false,
+            },
+        };
+    }
+
+    return {
+        props: {},
+    };
 }

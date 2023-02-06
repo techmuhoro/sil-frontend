@@ -3,6 +3,7 @@ import { Box, Typography } from '@mui/material';
 import UserTable from '@/components/users/UsersTable';
 import UsersToolbar from '@/components/users/UsersToolbar';
 import { ContentWrapper } from '@/components/ContentWrapper';
+import AppNavbar from '@/components/Navbar';
 
 export default function UsersView({ users }) {
     const [usersList, setUsersList] = useState(users);
@@ -25,6 +26,7 @@ export default function UsersView({ users }) {
 
     return (
         <Box>
+            <AppNavbar />
             <ContentWrapper>
                 <UsersToolbar
                     search={search}
