@@ -2,6 +2,7 @@ import { Box, Typography } from '@mui/material';
 import { BASE_URL } from '@/config';
 import UsersView from '@/components/users';
 import logger from '@/services/logger';
+import { getSession } from 'next-auth/react';
 
 export default function UsersPage({ users }) {
     return (
@@ -11,7 +12,19 @@ export default function UsersPage({ users }) {
     );
 }
 
-export async function getServerSideProps() {
+export async function getServerSideProps({ req }) {
+    // check if user is authenticated
+    const session = await getSession({ req });
+
+    if (!session) { //if no session redirect user to login
+        return {
+            redirect: {
+                destination: '/auth/login',
+                permanent: false,
+            },
+        };
+    }
+
     const url = BASE_URL + '/users';
 
     try {

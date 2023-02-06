@@ -24,8 +24,6 @@ export async function getServerSideProps({ req }) {
         };
     }
 
-    console.log(session);
-
     return {
         props: {
             session,

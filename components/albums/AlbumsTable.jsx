@@ -16,7 +16,10 @@ export default function AlbumsTable({ user, albums }) {
         <Box>
             <Stack
                 sx={{
-                    alignItems: 'center',
+                    alignItems: {
+                        sm: 'center',
+                        md: 'flex-start'
+                    },
                     rowGap: '20px',
                     columnGap: '10px',
                     flexDirection: {

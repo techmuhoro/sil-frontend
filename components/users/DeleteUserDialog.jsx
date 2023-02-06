@@ -61,3 +61,5 @@ export default function DeleteUserDialog({ open, handleClose }) {
         </Dialog>
     );
 }
+
+Transition.displayName = 'TransitionComponent';

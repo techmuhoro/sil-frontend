@@ -19,7 +19,7 @@ export default function UsersView({ users }) {
         });
 
         setUsersList(newList);
-    }, [search]);
+    }, [search]); // eslint-disable-line react-hooks/exhaustive-deps
 
     const handleSearchChange = e => setSearch(e.target.value);
 

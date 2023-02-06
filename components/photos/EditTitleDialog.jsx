@@ -114,3 +114,5 @@ export default function EditTitleDialog({ open, handleClose, photo }) {
         </>
     );
 }
+
+Transition.displayName = 'TransitionComponent';

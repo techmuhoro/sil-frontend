@@ -3,6 +3,7 @@ import React from 'react';
 import { useRouter } from 'next/router';
 import { BASE_URL } from '@/config';
 import AlbumsView from '@/components/albums';
+import { getSession } from 'next-auth/react';
 
 export default function AlbumsPage({ user }) {
     const router = useRouter();
@@ -13,8 +14,22 @@ export default function AlbumsPage({ user }) {
     );
 }
 
-export async function getServerSideProps(context) {
-    const { userId } = context.params;
+export async function getServerSideProps({ params, req }) {
+    // verify if user is authenticated
+    const session = await getSession({ req });
+
+    if (!session) {
+        //if no session redirect user to login
+        return {
+            redirect: {
+                destination: '/auth/login',
+                permanent: false,
+            },
+        };
+    }
+
+    const { userId } = params;
+
     try {
         // get the user
         const userRes = await fetch(BASE_URL + `/users/${userId}`);

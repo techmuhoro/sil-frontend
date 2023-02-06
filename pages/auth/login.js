@@ -1,10 +1,11 @@
 import { Box, Button } from '@mui/material';
 import { signIn } from 'next-auth/react';
+import Image from 'next/image';
 
 export default function LoginPage() {
     const handleLogin = () => {
         signIn('google', {
-            callbackUrl: 'http://localhost:3000/auth/private',
+            callbackUrl: '/users',
         });
     };
 
@@ -19,15 +20,15 @@ export default function LoginPage() {
                 }}
             >
                 <button onClick={handleLogin} className="google-login">
-                    <img
+                    <Image
                         src="/images/google-logo.png"
                         alt="img"
-                        className="google-img"
+                        width={40}
+                        height={40}
                     />
                     <span>Sign in with Google</span>
                 </button>
             </Box>
-            {/* <Button variant="contained" onClick={handleLogin}>Sign in with Boogle</Button> */}
         </>
     );
 }
