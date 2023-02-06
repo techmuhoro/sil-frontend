@@ -13,17 +13,18 @@ export default function UsersPage({ users }) {
 }
 
 export async function getServerSideProps({ req }) {
-    // check if user is authenticated
-    const session = await getSession({ req });
+   // verify if user is authenticated
+   const session = await getSession({ req });
 
-    if (!session) { //if no session redirect user to login
-        return {
-            redirect: {
-                destination: '/auth/login',
-                permanent: false,
-            },
-        };
-    }
+   if (!session) {
+    //if no session redirect user to login
+    return {
+        redirect: {
+            destination: '/auth/login',
+            permanent: false,
+        },
+    };
+}
 
     const url = BASE_URL + '/users';
 
