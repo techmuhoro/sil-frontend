@@ -4,19 +4,27 @@ import {
     TextField,
     Button,
     InputAdornment,
+    Stack,
 } from '@mui/material';
 import SearchIcon from '@mui/icons-material/Search';
 import { Download as DownloadIcon } from '@/icons/download';
 import { Upload as UploadIcon } from '@/icons/upload';
 import AddIcon from '@mui/icons-material/Add';
 
-export default function AlbumsToolbar() {
+export default function AlbumsToolbar({search, handleSearchChange}) {
     return (
         <Box sx={{ mb: 2 }}>
             <Typography variant="h4" sx={{ mb: 1 }}>
                 Albums
             </Typography>
-            <Box sx={{ display: 'flex' }}>
+            <Stack
+                sx={{
+                    rowGap: '10px',
+                    flexDirection: {
+                        md: 'row',
+                    },
+                }}
+            >
                 <>
                     <TextField
                         placeholder="Search albums"
@@ -30,12 +38,20 @@ export default function AlbumsToolbar() {
                                 </InputAdornment>
                             ),
                         }}
+                        value={search}
+                        onChange={handleSearchChange}
                     />
                 </>
-                <Box sx={{ ml: 'auto' }}>
-                    <Button size="medium" startIcon={<UploadIcon />}>
+                <Box
+                    sx={{
+                        ml: {
+                            md: 'auto',
+                        },
+                    }}
+                >
+                    {/* <Button size="medium" startIcon={<UploadIcon />}>
                         Import
-                    </Button>
+                    </Button> */}
                     <Button size="medium" startIcon={<DownloadIcon />}>
                         Download
                     </Button>
@@ -48,7 +64,7 @@ export default function AlbumsToolbar() {
                         Album
                     </Button>
                 </Box>
-            </Box>
+            </Stack>
         </Box>
     );
 }

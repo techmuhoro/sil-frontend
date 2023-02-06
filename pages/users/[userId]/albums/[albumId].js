@@ -2,19 +2,19 @@ import { Box, Typography } from '@mui/material';
 import {} from 'react';
 import { useRouter } from 'next/router';
 import { BASE_URL } from '@/config';
+import PhotosView from '@/components/photos';
 
 export default function SingleAlbumPage({ photos }) {
     const router = useRouter();
-    console.log(photos);
     return (
         <Box>
-            <Typography>Singles</Typography>
+            <PhotosView photos={photos} />
         </Box>
     );
 }
 
 export async function getServerSideProps(context) {
-    const { albumId } = context.params;
+    const { albumId } = context.params; // get the id of the album from the context
     try {
         const photosRes = await fetch(BASE_URL + `/albums/${albumId}/photos`);
         const photos = await photosRes.json();
@@ -24,9 +24,7 @@ export async function getServerSideProps(context) {
                 photos: photos,
             },
         };
-
     } catch (e) {
-        console.log(e);
         return {
             props: {
                 photos: [],
