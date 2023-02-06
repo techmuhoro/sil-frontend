@@ -49,7 +49,6 @@ export async function getServerSideProps({ req }) {
             },
         };
     } catch (e) {
-        logger.error(`${e.message} \n ${e.stack}`);
         return {
             props: {
                 greet: '',
