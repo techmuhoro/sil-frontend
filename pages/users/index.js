@@ -1,7 +1,5 @@
-import { Box, Typography } from '@mui/material';
 import { BASE_URL } from '@/config';
 import UsersView from '@/components/users';
-import logger from '@/services/logger';
 import { getSession } from 'next-auth/react';
 
 export default function UsersPage({ users }) {
